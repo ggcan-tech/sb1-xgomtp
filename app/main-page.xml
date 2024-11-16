@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar visibility="collapsed" />
+    
+    <GridLayout rows="*, auto">
+        <!-- Main Content -->
+        <StackLayout row="0" class="p-6">
+            <!-- Hero Image -->
+            <Image src="~/images/fashion-hero.jpg" class="hero-image" stretch="aspectFill" />
+            
+            <!-- Title Section -->
+            <StackLayout class="title-container">
+                <Label text="Find Your" class="title-text" />
+                <Label text="Best Style" class="title-text bold" />
+                
+                <Label text="Join and discover the best style according to your passion" 
+                       class="subtitle-text" textWrap="true" />
+            </StackLayout>
+        </StackLayout>
+
+        <!-- Bottom Action Button -->
+        <StackLayout row="1" class="action-container p-6">
+            <Button text="Get Started" tap="{{ onLogin }}" class="get-started-btn" />
+        </StackLayout>
+    </GridLayout>
+</Page>

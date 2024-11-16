@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles */
+.header-text {
+    font-size: 24;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 8;
+}
+
+.subtitle-text {
+    font-size: 16;
+    color: #666666;
+    margin-bottom: 24;
+}
+
+.section-title {
+    font-size: 18;
+    font-weight: 600;
+    color: #000000;
+    margin: 16 0;
+}
+
+/* Button styles */
+.primary-btn {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 16;
+    padding: 16 24;
+    border-radius: 8;
+}
+
+.secondary-btn {
+    background-color: #f8f8f8;
+    color: #000000;
+    font-size: 16;
+    padding: 16 24;
+    border-radius: 8;
+    border-width: 1;
+    border-color: #e2e2e2;
+}
+
+.category-btn {
+    background-color: #f8f8f8;
+    color: #000000;
+    font-size: 14;
+    padding: 8 16;
+    border-radius: 20;
+    border-width: 1;
+    border-color: #e2e2e2;
+}
+
+.category-btn-selected {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 14;
+    padding: 8 16;
+    border-radius: 20;
+}
+
+.continue-btn {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 16;
+    padding: 16 24;
+    border-radius: 8;
+    margin-top: 24;
+}
+
+/* Item grid styles */
+.item-container {
+    background-color: #ffffff;
+    border-radius: 8;
+    elevation: 2;
+}
+
+.item-image {
+    border-radius: 8;
+}
+
+.item-category {
+    font-size: 12;
+    color: #666666;
+    text-align: center;
+    margin-top: 4;
+}
+
+/* Login styles */
+.welcome-text {
+    font-size: 32;
+    font-weight: bold;
+    color: #000000;
+    margin: 32 0;
+}
+
+.form-container {
+    margin: 16 0;
+}
+
+.input-field {
+    margin-bottom: 16;
+}
+
+.input {
+    font-size: 16;
+    padding: 16;
+    border-width: 1;
+    border-color: #e2e2e2;
+    border-radius: 8;
+    background-color: #ffffff;
+    color: #000000;
+    placeholder-color: #666666;
+}
+
+.login-btn {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 16;
+    font-weight: 500;
+    padding: 16 24;
+    border-radius: 8;
+    margin-top: 24;
+}
+
+.login-btn:disabled {
+    background-color: #cccccc;
+    color: #ffffff;
+}
+
+.social-login {
+    margin-top: 32;
+}
+
+.divider-text {
+    text-align: center;
+    color: #666666;
+    margin: 16 0;
+    font-size: 14;
+}
+
+.social-buttons {
+    margin-top: 16;
+}
+
+.social-btn {
+    margin: 8;
+    padding: 12 24;
+    background-color: #ffffff;
+    border-width: 1;
+    border-color: #e2e2e2;
+    border-radius: 8;
+    color: #000000;
+    font-weight: 500;
+}
+
+.signup-container {
+    margin-top: 32;
+    horizontal-align: center;
+}
+
+.hint-text {
+    color: #666666;
+    font-size: 14;
+}
+
+.link-text {
+    color: #000000;
+    font-weight: bold;
+    font-size: 14;
+}

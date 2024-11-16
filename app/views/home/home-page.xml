@@ -1,0 +1,34 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="AI Outfit Generator" class="action-bar" flat="true" />
+    
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="Ready to dress up?" class="title-label" />
+            <Label text="Let's find the perfect outfit for you" class="subtitle-label" />
+            
+            <Button text="🎯 Generate New Outfit" tap="{{ showQuestions }}" class="primary-btn m-y-4" />
+            
+            <StackLayout visibility="{{ showingQuestions ? 'visible' : 'collapsed' }}" class="card">
+                <Label text="Quick Questions" class="subtitle-label" style="font-weight: bold;" />
+                
+                <Label text="Where are you going?" class="subtitle-label" />
+                <TextField hint="Enter destination" text="{{ questions.destination }}" class="input-field" />
+                
+                <Label text="How are you feeling?" class="subtitle-label" />
+                <TextField hint="Enter your mood" text="{{ questions.feeling }}" class="input-field" />
+                
+                <Label text="Consider weather?" class="subtitle-label" />
+                <Switch checked="{{ questions.weatherImportant }}" class="m-b-4" />
+                
+                <Button text="✨ Generate Outfit" tap="{{ generateOutfit }}" class="primary-btn" />
+            </StackLayout>
+            
+            <StackLayout visibility="{{ outfitGenerated ? 'visible' : 'collapsed' }}" class="card m-t-4">
+                <Label text="Your Perfect Outfit" class="subtitle-label" style="font-weight: bold;" />
+                <GridLayout rows="auto" columns="*" class="m-t-4">
+                    <!-- Outfit items will be displayed here -->
+                </GridLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</Page>

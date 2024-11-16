@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Add Your Wardrobe" flat="true" />
+    
+    <ScrollView>
+        <StackLayout class="p-6">
+            <Label text="Let's Build Your Wardrobe" class="header-text" />
+            <Label text="Take photos of your clothes to get personalized outfit recommendations" class="subtitle-text" textWrap="true" />
+            
+            <!-- Photo Actions -->
+            <GridLayout rows="auto" columns="*, *" class="action-buttons">
+                <Button text="📸 Take Photo" tap="{{ takePhoto }}" 
+                        class="primary-btn" col="0" margin="5" />
+                <Button text="🖼️ Gallery" tap="{{ selectFromGallery }}" 
+                        class="secondary-btn" col="1" margin="5" />
+            </GridLayout>
+            
+            <!-- Item Category Selection -->
+            <StackLayout class="category-container" visibility="{{ showCategorySelection ? 'visible' : 'collapsed' }}">
+                <Label text="What type of item is this?" class="section-title" />
+                <WrapLayout>
+                    <Repeater items="{{ categories }}">
+                        <Repeater.itemTemplate>
+                            <Button text="{{ name }}" tap="{{ $parent.selectCategory }}"
+                                    class="{{ selected ? 'category-btn-selected' : 'category-btn' }}" 
+                                    margin="5" />
+                        </Repeater.itemTemplate>
+                    </Repeater>
+                </WrapLayout>
+            </StackLayout>
+            
+            <!-- Wardrobe Items Grid -->
+            <GridLayout rows="auto" class="items-grid">
+                <Label text="Your Wardrobe Items" class="section-title" 
+                       visibility="{{ items.length > 0 ? 'visible' : 'collapsed' }}" />
+                <GridLayout columns="*, *, *" rows="auto">
+                    <Repeater items="{{ items }}">
+                        <Repeater.itemTemplate>
+                            <StackLayout class="item-container" margin="5">
+                                <Image src="{{ imageUrl }}" stretch="aspectFill" 
+                                       height="100" class="item-image" />
+                                <Label text="{{ category }}" class="item-category" />
+                            </StackLayout>
+                        </Repeater.itemTemplate>
+                    </Repeater>
+                </GridLayout>
+            </GridLayout>
+            
+            <!-- Continue Button -->
+            <Button text="Continue to App" tap="{{ onContinue }}" 
+                    class="continue-btn" visibility="{{ items.length > 0 ? 'visible' : 'collapsed' }}" />
+        </StackLayout>
+    </ScrollView>
+</Page>

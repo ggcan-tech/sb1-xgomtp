@@ -1,0 +1,28 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Your Wardrobe" class="action-bar" flat="true" />
+    
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="Add Your Clothes" class="title-label" />
+            <Label text="Take photos of your wardrobe items" class="subtitle-label" />
+            
+            <GridLayout rows="auto,auto" columns="*,*" class="m-y-4">
+                <Button text="📸 Take Photo" tap="{{ takePhoto }}" class="primary-btn m-2" row="0" col="0" />
+                <Button text="🖼️ Gallery" tap="{{ chooseFromGallery }}" class="secondary-btn m-2" row="0" col="1" />
+            </GridLayout>
+            
+            <GridLayout rows="*" columns="*" class="m-t-4">
+                <ListView items="{{ wardrobeItems }}" class="list-group">
+                    <ListView.itemTemplate>
+                        <GridLayout rows="auto" columns="auto,*" class="card">
+                            <Image src="{{ imageUrl }}" width="60" height="60" class="rounded-lg" row="0" col="0" />
+                            <Label text="{{ type }}" row="0" col="1" class="subtitle-label m-l-4" />
+                        </GridLayout>
+                    </ListView.itemTemplate>
+                </ListView>
+            </GridLayout>
+            
+            <Button text="Complete Setup" tap="{{ completeSetup }}" class="primary-btn m-t-20" />
+        </StackLayout>
+    </ScrollView>
+</Page>

@@ -1,0 +1,21 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Style Preferences" class="action-bar" flat="true" />
+    
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="Your Style" class="title-label" />
+            <Label text="What's your style for {{ currentPlace }}?" class="subtitle-label" />
+            
+            <Repeater items="{{ styles }}">
+                <Repeater.itemTemplate>
+                    <GridLayout columns="*,auto" class="card" tap="{{ $parent.selectStyle }}">
+                        <Label text="{{ $value }}" col="0" class="subtitle-label" />
+                        <Label text="{{ selected ? '✓' : '' }}" col="1" class="text-blue-500" />
+                    </GridLayout>
+                </Repeater.itemTemplate>
+            </Repeater>
+            
+            <Button text="Continue" tap="{{ nextStep }}" class="primary-btn m-t-20" />
+        </StackLayout>
+    </ScrollView>
+</Page>

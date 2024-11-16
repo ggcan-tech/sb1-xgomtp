@@ -1,0 +1,8 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Select Your Places" />
+    <StackLayout class="p-4">
+        <Label text="Where do you usually go?" class="text-2xl font-bold mb-4" />
+        <Label text="Select all the places you frequently visit" class="text-lg mb-4" />
+        <Button text="Continue" tap="{{ nextStep }}" class="btn btn-primary" />
+    </StackLayout>
+</Page>
